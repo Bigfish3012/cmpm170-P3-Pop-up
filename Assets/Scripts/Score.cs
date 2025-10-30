@@ -19,10 +19,11 @@ public class Score : MonoBehaviour
         currentScore += amount;
         UpdateScoreText();
         int save_highScore = PlayerPrefs.GetInt("HighScore", 0);
+        PlayerPrefs.SetInt("LastScore", currentScore);
         if (currentScore > save_highScore)
         {
             PlayerPrefs.SetInt("HighScore", currentScore);
-            PlayerPrefs.Save();
+            //PlayerPrefs.Save();
         }
     }
 
