@@ -837,7 +837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1850657251}
   m_Layer: 5
-  m_Name: poppus
+  m_Name: poppus_for_spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
