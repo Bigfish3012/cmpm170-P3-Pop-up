@@ -8,13 +8,9 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private int currentScore = 0;
 
-    [SerializeField]private TextMeshProUGUI highScoreText;
-    [SerializeField] private int highScore = 0;
-
     private void Awake()
     {
         Instance = this;
-
         UpdateScoreText();
     }
 
@@ -22,6 +18,12 @@ public class Score : MonoBehaviour
     {
         currentScore += amount;
         UpdateScoreText();
+        int save_highScore = PlayerPrefs.GetInt("HighScore", 0);
+        if (currentScore > save_highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", currentScore);
+            PlayerPrefs.Save();
+        }
     }
 
     private void UpdateScoreText()
@@ -30,13 +32,10 @@ public class Score : MonoBehaviour
         {
             scoreText.text = "Score: " + currentScore.ToString();
         }
-        if (highScoreText != null)
-        {
-            if (currentScore > highScore)
-            {
-                highScore = currentScore;
-            }
-            highScoreText.text = "High Score: " + highScore.ToString();
-        }
+    }
+
+    public int GetCurrentScore()
+    {
+        return currentScore;
     }
 }
