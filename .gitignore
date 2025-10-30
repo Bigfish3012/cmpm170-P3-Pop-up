@@ -1,0 +1,51 @@
+# --- Unity ---
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+# Crash/Profiler
+*.pidb
+*.user
+*.userprefs
+*.csproj
+*.sln
+*.unityproj
+*.tmp
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Rider / VSCode / VS
+.vs/
+.idea/
+*.DotSettings.user
+.vscode/
+
+# Gradle / Android / iOS
+.gradle/
+ExportedObj/
+*.apk
+*.aab
+*.keystore
+Pods/
+
+# Auto-generated
+*.unitypackage
+
+# If you use Addressables (optional cache ignores)
+# Assets/AddressableAssetsData/*/*.bin*
+# Assets/AddressableAssetsData/*/*.hash
+
+# Keep these in Git (do NOT ignore)
+!Assets/
+!Packages/
+!ProjectSettings/
+!Assets/**/*.meta
+!ProjectSettings/**/*.asset
+!Packages/manifest.json
