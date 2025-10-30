@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
+        // source from: https://www.youtube.com/watch?v=6PkdHcVFM6M
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
         highScoreText.text = "High Score: " + highScore.ToString();
 
@@ -23,6 +24,7 @@ public class GameOver : MonoBehaviour
     }
     public void Home()
     {
+        PlayerPrefs.DeleteKey("HighScore");
         SceneManager.LoadScene(0);
     }
 }
