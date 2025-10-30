@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d13ae43789fd74d86505c5dde74ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOver
+  highScoreText: {fileID: 1759523273}
 --- !u!1 &1328945477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1002,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1720923021}
-  - component: {fileID: 1720923020}
   m_Layer: 0
   m_Name: HUDcol
   m_TagString: Untagged
@@ -1009,22 +1009,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1720923020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720923019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfb5c3dd660fe9d43a38ae73e16d640a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Score
-  scoreText: {fileID: 0}
-  currentScore: 0
-  highScoreText: {fileID: 1759523273}
-  highScore: 0
 --- !u!4 &1720923021
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,7 +1036,7 @@ GameObject:
   - component: {fileID: 1759523274}
   - component: {fileID: 1759523273}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Score_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
