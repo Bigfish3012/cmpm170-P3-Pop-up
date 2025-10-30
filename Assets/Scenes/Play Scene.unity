@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CountdownTimer
   timerText: {fileID: 1270099912}
-  timeRemaining: 50
+  timeRemaining: 10
 --- !u!4 &1114105342
 Transform:
   m_ObjectHideFlags: 0
@@ -616,6 +616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Score
   scoreText: {fileID: 1083541939}
   currentScore: 0
+  highScoreText: {fileID: 0}
+  highScore: 0
 --- !u!1 &1270099910
 GameObject:
   m_ObjectHideFlags: 0
