@@ -23,7 +23,6 @@ public class Score : MonoBehaviour
         if (currentScore > save_highScore)
         {
             PlayerPrefs.SetInt("HighScore", currentScore);
-            //PlayerPrefs.Save();
         }
     }
 
