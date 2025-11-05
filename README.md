@@ -6,12 +6,10 @@ Unity Editor version: 6000.2.7f2
 
 TODO:
 1. Make the pop pus windows has random size and colors
-2. Add music effects
-3. Fix the pop-ups position: Some pop-ups will out of the play screen, and player can't click on the close button
-4. Make the pop ups windows can be move if the player want to click on it
-5. If the pop-up window fills the entire screen, then the game ends.
-6. Bring the pop-up windows to the front if the player clicks on the window's body: sometimes the close button can't be seen.
-
+2. Add music effects (maybe background music or the game over music)
+3. If the pop-up window fills the entire screen, then the game ends.
+4. Bring the pop-up windows to the front if the player drags on the window's body: sometimes the close button can't be seen.
+5. Make the close button will runs away
 ---
 
 
@@ -25,4 +23,20 @@ sounds
 - Windows XP Error: https://www.myinstants.com/en/instant/windows-xp-error/
 - Windows 10 Error Sound: https://www.myinstants.com/en/instant/windows-10-error-sound-69419/
 - Windows 11 error sound: https://www.myinstants.com/en/instant/windows-11-error-sound-46671/
-- Windows 2000 error: 
+- Windows 2000 error: https://www.myinstants.com/en/instant/windows-2000-error-70582/
+
+---
+
+## Scripts Overview
+
+### Game Scripts
+- **PopupWindow.cs** - Manages individual pop-up window behavior. Handles close button functionality, plays error sounds when created, and adds score when closed.
+- **PopupManager.cs** - Controls pop-up spawning system. Generates pop-ups at random positions with increasing frequency (decreasing spawn intervals), and ensures pop-ups stay within screen bounds.
+- **AudioManager.cs** - Singleton audio manager that plays random error sounds from a collection when pop-ups are created.
+- **Score.cs** - Score management system. Tracks current score, updates UI display, and saves high score and last score to PlayerPrefs.
+- **CountdownTimer.cs** - Game timer that counts down from 60 seconds. When time reaches zero, loads the game over scene.
+
+### Scene Scripts
+- **MainMenu.cs** - Handles main menu functionality, allows players to start the game.
+- **GameOver.cs** - Manages game over screen. Displays high score and last score from PlayerPrefs, provides restart and home button functionality.
+---
