@@ -13,3 +13,16 @@ TODO:
 6. Bring the pop-up windows to the front if the player clicks on the window's body: sometimes the close button can't be seen.
 
 ---
+
+
+--- 
+Image
+- https://www.goodfon.com/minimalism/wallpaper-bsod-bsod-blue-screen-death.html
+
+---
+
+sounds
+- Windows XP Error: https://www.myinstants.com/en/instant/windows-xp-error/
+- Windows 10 Error Sound: https://www.myinstants.com/en/instant/windows-10-error-sound-69419/
+- Windows 11 error sound: https://www.myinstants.com/en/instant/windows-11-error-sound-46671/
+- Windows 2000 error: 

@@ -7,6 +7,10 @@ public class PopupWindow : MonoBehaviour
 
     void Awake()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayRandomErrorSound();
+        }
         if (closeButton != null)
         {
             closeButton.onClick.AddListener(Close);
