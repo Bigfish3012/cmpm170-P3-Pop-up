@@ -1,31 +1,49 @@
 using UnityEngine;
+using System.Collections; 
+using System.Collections.Generic;
 
 public class PopupManager : MonoBehaviour
 {
     [SerializeField] private GameObject popupPrefab;
     [SerializeField] private Transform popupParent;
 
-    [SerializeField] private float spawnInterval = 1f;
+    [SerializeField] private float startInterval = 2f;
+    [SerializeField] private float minInterval = 0.5f;
+    [SerializeField] private float intervalStep = 0.3f;
 
     private void Start()
     {
-        InvokeRepeating(nameof(SpawnPopup), spawnInterval, spawnInterval);
+        StartCoroutine(SpawnLoop());
+    }
+
+    private IEnumerator SpawnLoop()
+    {
+        float currentInterval = startInterval;
+        while (true)
+        {
+            yield return new WaitForSeconds(currentInterval);
+            SpawnPopup();
+            currentInterval = Mathf.Max(minInterval, currentInterval - intervalStep);
+        }
     }
 
     private void SpawnPopup()
     {
-        // 1. Safety check
         if (popupPrefab == null)
         {
             Debug.LogWarning("PopupManager: popupPrefab is not assigned!");
             return;
         }
 
-        // 2. Decide which UI parent to use
-        //    (prefer the one you dragged in Inspector, otherwise use this object)
-        Transform chosenParent = popupParent != null ? popupParent : transform;
-
-        // We need a RectTransform because we're doing UI positioning
+        Transform chosenParent;
+        if (popupParent != null)
+        {
+            chosenParent = popupParent;
+        }
+        else
+        {
+            chosenParent = transform;
+        }
         RectTransform parentRect = chosenParent as RectTransform;
         if (parentRect == null)
         {
@@ -33,22 +51,29 @@ public class PopupManager : MonoBehaviour
             return;
         }
 
-        // 3. Create the popup as a child of the parent
         GameObject popupGO = Instantiate(popupPrefab, parentRect);
         RectTransform popupRect = popupGO.GetComponent<RectTransform>();
 
-        // 4. Get the size of the parent (the area we can spawn in)
+        // Make sure it draws on top
+        popupGO.transform.SetAsLastSibling();
+
         float parentWidth = parentRect.rect.width;
         float parentHeight = parentRect.rect.height;
 
-        // 5. Pick a random position inside that area
-        float randomX = Random.Range(-parentWidth / 2f, parentWidth / 2f);
-        float randomY = Random.Range(-parentHeight / 2f, parentHeight / 2f);
-        Vector2 randomPosition = new Vector2(randomX, randomY);
+        // Popup size
+        float popupWidth = popupRect.rect.width;
+        float popupHeight = popupRect.rect.height;
 
-        // 6. Move the popup there
-        popupRect.anchoredPosition = randomPosition;
+        // Keep full window inside the parent bounds
+        float xMin = -parentWidth / 2f + popupWidth / 2f;
+        float xMax =  parentWidth / 2f - popupWidth / 2f;
+        float yMin = -parentHeight / 2f + popupHeight / 2f;
+        float yMax =  parentHeight / 2f - popupHeight / 2f;
+
+        float randomX = Random.Range(xMin, xMax);
+        float randomY = Random.Range(yMin, yMax);
+
+        popupRect.anchoredPosition = new Vector2(randomX, randomY);
     }
-
 
 }
