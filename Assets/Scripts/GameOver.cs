@@ -6,6 +6,7 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI highScoreText;
     [SerializeField] private TextMeshProUGUI currentScoreText;
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class GameOver : MonoBehaviour
         int lastScore = PlayerPrefs.GetInt("LastScore", 0);
         currentScoreText.text = "Score: " + lastScore.ToString();
 
-
+        audioSource.Play();
     }
     public void Restart()
     {

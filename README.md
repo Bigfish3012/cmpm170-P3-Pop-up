@@ -6,12 +6,7 @@ Unity Editor version: 6000.2.7f2
 
 TODO:
 1. Make the pop pus windows has random size and colors
-2. Add music effects (maybe background music or the game over music)
-3. If the pop-up window fills the entire screen, then the game ends.
-4. Bring the pop-up windows to the front if the player drags on the window's body: sometimes the close button can't be seen.
-5. Make the close button will runs away
 ---
-
 
 --- 
 Image
@@ -24,6 +19,7 @@ sounds
 - Windows 10 Error Sound: https://www.myinstants.com/en/instant/windows-10-error-sound-69419/
 - Windows 11 error sound: https://www.myinstants.com/en/instant/windows-11-error-sound-46671/
 - Windows 2000 error: https://www.myinstants.com/en/instant/windows-2000-error-70582/
+- Game Over Link: https://www.myinstants.com/en/instant/game-over-link/
 
 ---
 
