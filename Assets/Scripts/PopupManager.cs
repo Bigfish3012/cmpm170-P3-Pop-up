@@ -70,9 +70,20 @@ public class PopupManager : MonoBehaviour
         float xMax =  parentWidth / 2f - popupWidth / 2f;
         float yMin = -parentHeight / 2f + popupHeight / 2f;
         float yMax =  parentHeight / 2f - popupHeight / 2f;
+        float randomX = Random.Range(xMin, xMax); 
+        float randomY = Random.Range(yMin, yMax); 
+        bool popupKey = false;
 
-        float randomX = Random.Range(xMin, xMax);
-        float randomY = Random.Range(yMin, yMax);
+        while (popupKey == false)
+        {
+            randomX = Random.Range(xMin, xMax);
+            randomY = Random.Range(yMin, yMax);
+            popupKey = true;
+            if (randomX < -200 && randomY > 120)
+            {
+                popupKey = false;
+            }
+        }
 
         popupRect.anchoredPosition = new Vector2(randomX, randomY);
     }
