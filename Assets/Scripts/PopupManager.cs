@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PopupManager : MonoBehaviour
 {
-    [SerializeField] private GameObject popupPrefab;
+    [SerializeField] private GameObject[] popupPrefabs;
     [SerializeField] private Transform popupParent;
 
     [SerializeField] private float startInterval = 2f;
@@ -29,11 +29,12 @@ public class PopupManager : MonoBehaviour
 
     private void SpawnPopup()
     {
-        if (popupPrefab == null)
+        if (popupPrefabs == null || popupPrefabs.Length == 0)
         {
             Debug.LogWarning("PopupManager: popupPrefab is not assigned!");
             return;
         }
+        GameObject chosenPrefab = popupPrefabs[Random.Range(0, popupPrefabs.Length)];
 
         Transform chosenParent;
         if (popupParent != null)
@@ -51,7 +52,7 @@ public class PopupManager : MonoBehaviour
             return;
         }
 
-        GameObject popupGO = Instantiate(popupPrefab, parentRect);
+        GameObject popupGO = Instantiate(chosenPrefab, parentRect);
         RectTransform popupRect = popupGO.GetComponent<RectTransform>();
 
         // Make sure it draws on top
