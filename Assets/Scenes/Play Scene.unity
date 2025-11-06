@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad05a2af2cfa2541aecba0306fc2bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopupManager
-  popupPrefab: {fileID: 4199753414643181858, guid: 57fccb403c12c194da32dff8db24741b, type: 3}
+  popupPrefab: {fileID: 4199753414643181858, guid: 4b5e6083dc6c57a418ec11fda4a635f0, type: 3}
   popupParent: {fileID: 1850657251}
   startInterval: 2
   minInterval: 0.5
