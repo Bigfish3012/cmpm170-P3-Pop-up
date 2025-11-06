@@ -75,4 +75,3 @@ public class PopupWindow : MonoBehaviour, IPointerDownHandler, IDragHandler
         rectTransform.anchoredPosition = localPoint + dragOffset;
     }
 }
-}
