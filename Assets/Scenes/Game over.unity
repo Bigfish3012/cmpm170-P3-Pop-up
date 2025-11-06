@@ -677,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameOver
   highScoreText: {fileID: 1759523273}
   currentScoreText: {fileID: 227906603}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1223680803}
 --- !u!82 &1223680803
 AudioSource:
   m_ObjectHideFlags: 0
@@ -689,7 +689,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: eed34ee3614e8d944bde2d20fc60df21, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
